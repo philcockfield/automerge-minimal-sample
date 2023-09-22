@@ -32,15 +32,10 @@ if (isValidAutomergeUrl(rootDocUrl)) {
 
 await handle.whenReady();
 
-const docUrl = (document.location.hash = handle?.url);
-(window as any).handle = handle; // we'll use this later for experimentation
+// const docUrl = (document.location.hash = handle?.url);
+// (window as any).handle = handle; // we'll use this later for experimentation
 
 /**
  * API
  */
-export const Sample = {
-  repo,
-  get handle() {
-    return handle;
-  },
-} as const;
+export const Sample = { repo, handle } as const;
