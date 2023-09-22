@@ -15,7 +15,7 @@ export function App(props: { docRef?: t.DocHandle<t.Doc> }) {
    */
   const increment = () => {
     docRef?.change((d) => d.count?.increment(1));
-    // redraw();
+    redraw();
   };
 
   /**
