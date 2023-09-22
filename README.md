@@ -15,3 +15,7 @@ yarn dev
 yarn build
 yarn serve
 ```
+
+## Issues
+
+- Firefox, Safari
