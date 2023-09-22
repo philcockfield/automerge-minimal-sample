@@ -6,3 +6,12 @@ Minimal automerge-repo setup using Vite to isolate build/bundle problems.
 
 - https://automerge.org/docs/quickstart/
 - https://github.com/automerge/automerge-repo
+
+## Run
+
+```bash
+yarn install
+yarn dev
+yarn build
+yarn preview
+```
