@@ -13,5 +13,5 @@ Minimal automerge-repo setup using Vite to isolate build/bundle problems.
 yarn install
 yarn dev
 yarn build
-yarn preview
+yarn serve
 ```

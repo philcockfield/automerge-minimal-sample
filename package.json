@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite --port 1234",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "serve": "cd dist && serve"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@automerge/automerge": "^2.1.3",
