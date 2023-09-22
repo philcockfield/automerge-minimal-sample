@@ -22,3 +22,4 @@ yarn serve
 ## Issues
 
 - Firefox, Safari
+- Lib → App (build) → works?
