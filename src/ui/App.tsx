@@ -21,8 +21,13 @@ export function App(props: { docRef?: t.DocHandle<t.Doc> }) {
   /**
    * Render
    */
-  const styles = {
-    base: { padding: 20, color: COLORS.DARK },
+  const styles: t.Styles = {
+    base: {
+      color: COLORS.DARK,
+      fontFamily: 'sans-serif',
+      padding: 20,
+      lineHeight: 1.4,
+    },
   };
 
   const btn = (label: string, handler: () => void) => {
