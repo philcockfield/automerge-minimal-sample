@@ -4,7 +4,7 @@ Minimal automerge-repo setup using Vite to isolate build/bundle problems.
 
 ## References
 
-- https://automerge.org/docs/quickstart/
+- https://automerge.org/docs/quickstart ← (initial project creation recipe)
 - https://github.com/automerge/automerge-repo
 
 ## Run
