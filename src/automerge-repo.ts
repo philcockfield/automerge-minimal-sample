@@ -8,6 +8,7 @@ import { A, type t } from './common';
  * https://automerge.org/docs/quickstart
  */
 const repo = new Repo({
+  // network: [],
   network: [new BroadcastChannelNetworkAdapter()],
   storage: new IndexedDBStorageAdapter(),
 });
@@ -24,18 +25,21 @@ const createDoc = () => {
   return doc;
 };
 
-if (isValidAutomergeUrl(rootDocUrl)) {
-  handle = repo.find<t.Doc>(rootDocUrl);
-} else {
-  handle = createDoc();
-}
+handle = isValidAutomergeUrl(rootDocUrl) ? repo.find<t.Doc>(rootDocUrl) : createDoc();
+console.info('handle', handle);
 
 await handle.whenReady();
 
-// const docUrl = (document.location.hash = handle?.url);
-// (window as any).handle = handle; // we'll use this later for experimentation
+console.info('ready');
+
+const docUrl = handle?.url;
+document.location.hash = handle?.url; // NB: transient state.
 
 /**
  * API
  */
-export const Sample = { repo, handle } as const;
+export const Sample = {
+  repo,
+  handle,
+  docUrl,
+} as const;

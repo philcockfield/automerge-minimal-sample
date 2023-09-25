@@ -17,3 +17,15 @@ export const COLORS = {
   MAGENTA: '#FE0064',
   BLUE: '#4D7EF7',
 } as const;
+
+/**
+ * Styles
+ */
+const absolute: React.CSSProperties = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+};
+export const Styles = { absolute } as const;

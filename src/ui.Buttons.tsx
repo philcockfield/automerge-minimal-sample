@@ -1,9 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
+import { COLORS, type t } from './common';
 
-import { COLORS, type t } from '../common';
-
+/**
+ * Simple pressable button.
+ */
 export type ButtonProps = {
   children?: React.ReactNode;
+  label?: string;
   onClick?: React.MouseEventHandler;
   style?: React.CSSProperties;
 };
@@ -15,9 +18,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const down = (isDown: boolean) => () => setDown(isDown);
   const over = (isOver: boolean) => () => setOver(isOver);
 
-  /**
-   * [Render]
-   */
   const styles: t.Styles = {
     base: {
       display: 'inline-block',
@@ -37,7 +37,32 @@ export const Button: React.FC<ButtonProps> = (props) => {
       onMouseEnter={over(true)}
       onMouseLeave={over(false)}
     >
+      {props.label}
       {props.children}
     </div>
+  );
+};
+
+/**
+ * Simple <a> link.
+ */
+export type LinkProps = {
+  href?: string;
+  label?: React.ReactNode;
+  style?: t.Styles;
+};
+export const Link: React.FC<LinkProps> = (props) => {
+  const { href } = props;
+  const label = props.label ?? href;
+  const styles: t.Styles = { link: { textDecoration: 'none' } };
+  return (
+    <a
+      href={href}
+      style={{ ...props.style, ...styles.link }}
+      target={'_blank'}
+      rel={'noopener noreferrer'}
+    >
+      {label}
+    </a>
   );
 };
